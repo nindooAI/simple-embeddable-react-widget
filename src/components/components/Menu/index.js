@@ -8,7 +8,8 @@ import { AiOutlinePlusCircle, AiOutlineGold } from 'react-icons/ai'
 
 const options = [
     // { name: 'Abilities', icon: (classes) => <AbilitiesIcon className={classes} /> },
-    { name: 'Spaces', icon: (classes) => <SpacesIcon className={classes} /> },
+    { name: 'Spaces', icon: (classes) => <SpacesIcon className={classes} />, slug: 'spaces' },
+    { name: 'Main', icon: (classes) => <AiOutlineGold size={20} className={classes} />, slug: 'main' }
     // { name: 'Store', icon: (classes) => <StoreIcon className={classes} /> }, 
 ]
 
@@ -42,18 +43,22 @@ class Menu extends React.Component  {
 
     render() {
         const { activeButton, userAvatar } = this.state 
+        const { currentSection, updateSection } = this.props 
 
         return (
             <menu className={ activeButton === 'login' ? 'expand' : ''}>
-                <button onClick={ () => this.handleClick('')}>
-                    <AiOutlinePlusCircle size={40} />
-                </button>
-                <button className='main-button'>
-                    <AiOutlineGold size={20} />
-                </button>
-                <button className={activeButton === 'register' || activeButton === 'profile' ? 'active' : ''} onClick={() => this.handleClick('profile')}>
+                {
+                    options.map( (option) => {
+                        return (
+                            <button className={option.slug + '-button'} onClick={ () => updateSection(option.slug)}>
+                                { option.icon() }
+                            </button>
+                        )
+                    })
+                }               
+                <div className='user-picture-container'>
                     <img alt='user-profile' src={ userAvatar ? userAvatar : UserPlaceholder }/> 
-                </button>
+                </div>
             </menu>
           )
     }

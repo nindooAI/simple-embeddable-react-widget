@@ -1,5 +1,4 @@
 import React from 'react' 
-import './index.css'
 import * as API from '../../../../../../services/api'
 import { PlusIcon } from '../../../../../../assets/icons/spaces'
 import { SearchIcon, CheckIcon } from '../../../../../../assets/icons'

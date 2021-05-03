@@ -1,9 +1,8 @@
 #dashboard {
-    padding: 0 10px;
-    max-width: 300px;
-    height: 300px;
+    padding: 0;
     display: flex;
     overflow-x: hidden;
+    height: 100%;
 }
 
 
@@ -50,7 +49,7 @@
     height: 35px;
     width: 35px;
     border-radius: 10px;
-    background-color: var(--azul-destaque);
+    background-color: var(--secondary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +111,7 @@
 }
 
 .modal .options button > svg > path {
-    fill: var(--azul);
+    fill: var(--primary);
 }
 
 #dashboard > .left {
@@ -154,7 +153,7 @@
     width: calc(100% - 10px);
     padding: 5px;
     background-color: var(--cinza-claro);
-    color: var(--azul-destaque);
+    color: var(--secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -163,7 +162,7 @@
 
 #dashboard .rectangle ul li:hover {
     cursor: pointer;
-    background: var(--azul-destaque);
+    background: var(--secondary);
     color: white;
 }
 

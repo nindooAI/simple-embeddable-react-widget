@@ -75,7 +75,7 @@
 }
 
 .modal .options button > svg > path {
-    fill: var(--azul);
+    fill: var(--primary);
 }
 
 #dashboard > .left {
@@ -117,7 +117,7 @@
     width: calc(100% - 10px);
     padding: 5px;
     background-color: var(--cinza-claro);
-    color: var(--azul-destaque);
+    color: var(--secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -126,7 +126,7 @@
 
 #dashboard .rectangle ul li:hover {
     cursor: pointer;
-    background: var(--azul-destaque);
+    background: var(--secondary);
     color: white;
 }
 
@@ -139,8 +139,8 @@
 }
 
 .result_container > div.article {
-    width: calc(50% - 60px);
-    margin: 20px 20px 20px 0;
+    width: 200px;
+    margin: 10px 10px 10px 0;
     padding: 10px;
     border: 1px solid var(--cinza-claro);
     border-radius: 20px;
@@ -161,7 +161,7 @@
 .result_container .info {
     padding: 0px 10px;
     font-size: 14px;
-    color: var(--azul-destaque);
+    color: var(--secondary);
     font-weight: 500;
     width: 50%;
     margin: 0 10px;
@@ -200,15 +200,9 @@
 
 .result_container {
     display: flex;
-    flex-wrap: wrap;
+    max-width: 300px;
+    overflow-x: auto;
 }
-
-
-
-
-
-
-
 
 .user {
     background-color: white;
@@ -229,7 +223,7 @@
 .user p {
     font-size: 16px;
     width: 100%;
-    color: var(--azul-destaque)
+    color: var(--secondary)
 }
 
 
@@ -261,7 +255,7 @@
 
 .space >  p {
     text-align: center;
-    color: var(--azul-destaque);
+    color: var(--secondary);
     font-size: 14px;
     font-weight: 500;
 }
@@ -287,4 +281,8 @@
     right: 10%;
     border-radius: 10px 10px 0 0;
     background-color: var(--cinza);
+}
+
+.column {
+    flex-direction: column;
 }

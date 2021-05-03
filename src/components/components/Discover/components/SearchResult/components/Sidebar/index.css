@@ -18,7 +18,7 @@
     padding: 10px 30px;
     flex-direction: row;
     justify-content: space-between;
-    color: var(--azul-destaque);
+    color: var(--secondary);
     align-items: center;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .similar-links p {
-    color: var(--azul-destaque);
+    color: var(--secondary);
     font-size: 14px;
     width: 70%;
     margin: 0px;
@@ -66,5 +66,5 @@
 
 
 #dashboard #sidebar svg > path {
-    stroke: var(--azul-destaque);
+    stroke: var(--secondary);
 }

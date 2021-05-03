@@ -17,7 +17,7 @@ function Header ({ history, user, onSearch }) {
     return(
         <header id='header'> 
             { user ?
-                <p> Olá, { user.firstName } </p>
+                <span> Olá, { user.firstName } </span>
                 : null 
             }            
         </header>

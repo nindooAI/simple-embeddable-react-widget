@@ -67,9 +67,8 @@ class Sidebar extends React.Component {
                 <div className={ spaceFormIsOpen ? 'space-form open' : 'space-form close' }>
                     
                 </div>
-                <h4> My spaces </h4>
                 <div className='spaces-list'>
-                    { spaces.filter( (space) => space.role !== 'CONTRIBS_IN').map( (space, index) => { 
+                    { spaces.map( (space, index) => { 
                         return (
                             <div className={ space.name === current ? 'space-item active' : 'space-item'} key={index} onClick={() => this.onClick(space)}> 
                                 <div
@@ -84,24 +83,6 @@ class Sidebar extends React.Component {
                         )
                     })}
                 </div>
-                <h4> Shared with me </h4>
-                <div className='spaces-list'>
-                    { spaces.filter( (space) => space.role === 'CONTRIBS_IN').map( (space, index) => { 
-                        return (
-                            <div className={ space.name === current ? 'space-item active' : 'space-item'} key={index} onClick={() => this.onClick(space)}> 
-                                <div
-                                    ref={space.name} 
-                                    className='thumbnail'
-                                    style={{
-                                        background: `rgb(225, 232, 237) url("${space.image_url}") no-repeat scroll center center / cover`
-                                    }}
-                                />
-                                <p> { space.name } </p>
-                            </div>
-                        )
-                    })}
-                </div>
-
             </div>
         )
     }

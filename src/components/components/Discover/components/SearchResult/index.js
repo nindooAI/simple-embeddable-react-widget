@@ -105,12 +105,11 @@ class SearchResult extends React.Component {
         const { articles, spaces } = this.props 
 
         return (
-            <section id='dashboard'>
-                <div className='left flex' style={{ paddingRight: 0, overflowY: modalIsOpen ? 'hidden' : 'auto', width: 'calc(100vw - 127px)' }}>
+            <section id='dashboard' className='column'>
                     { articles[0].length > 0 &&
                     <div>
                         <FadeIn>
-                        <h4> Results </h4>
+                        <p> Results </p>
                         <section className='result_container'>
                             { articles[0].map((article, index) => {
                                 return (
@@ -144,7 +143,7 @@ class SearchResult extends React.Component {
                     </div>
                     }
                     { articles[2].length > 0 && <div> <FadeIn>
-                        <h4> Spaces </h4>
+                        <p> Spaces </p>
                         <section className='result_container'>
                         { articles[2].map((space, index) => {
                             return (
@@ -167,7 +166,7 @@ class SearchResult extends React.Component {
                     }
 
                     { articles[1].length > 0 && <div><FadeIn>
-                        <h4> Users </h4>
+                        <p> Users </p>
                         <section className='result_container'>
                         { articles[1].map((user, index) => {
                             return (
@@ -181,11 +180,10 @@ class SearchResult extends React.Component {
                         }) }
                         </section>
                     </FadeIn> </div> }
-                </div>
 
 
 
-                <div className={modalIsOpen ? 'modal show' : 'modal'}>
+                {/* <div className={modalIsOpen ? 'modal show' : 'modal'}>
                     <div
                         className='rectangle'
                         style={{
@@ -233,12 +231,12 @@ class SearchResult extends React.Component {
                         onClick={() => this.closeModal()}>
                         <LinkIcon />
                     </div>
-                </div>
+                </div> */}
 
 
-                <div className={modalIsOpen ? 'right show' : 'right'}>
+                {/* <div className={modalIsOpen ? 'right show' : 'right'}>
                     <Sidebar showHeader={true} articles={similar} />
-                </div>
+                </div> */}
 
 
             </section>
@@ -248,4 +246,4 @@ class SearchResult extends React.Component {
 
 }
 
-export default withRouter(SearchResult)
+export default SearchResult

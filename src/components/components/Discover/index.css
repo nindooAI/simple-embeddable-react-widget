@@ -1,9 +1,9 @@
 .link_container {
     display: flex;
-    padding: 0;
+    padding: 0 20px;
     margin: 0;
-    max-width: 300px;
-    overflow-x: scroll;
+    max-width: calc(100% - 40px);
+    overflow-x: auto;
     position: relative;
 }
 
@@ -29,7 +29,7 @@
 .link_container .info {
     padding: 0px 10px;
     font-size: 14px;
-    color: var(--azul-destaque);
+    color: var(--secondary);
     font-weight: 500;
     width: 50%;
     margin: 0 10px;

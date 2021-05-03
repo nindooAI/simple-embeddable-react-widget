@@ -1,15 +1,15 @@
 menu {
     width: calc(100% - 40px);
     padding: 20px 20px;
-    border-top: 1px solid var(--azul-destaque);
+    border-top: 1px solid var(--secondary);
     display: flex;
-    height: 50px;
     margin: 0;
     justify-content: space-between;
     background-repeat: no-repeat;
     background-position: top right;
     background-size: cover;
     transition: width 0.5s linear 0s, background 1s linear 0.5s, border 0.2s linear 0s; 
+    min-height: 50px;
 }
 
 menu button {
@@ -21,22 +21,22 @@ menu button {
     transition-property: opacity; 
     transition-duration: 1s;
     transition-delay: 1s;
-    color: var(--azul);
+    color: var(--primary);
 }
 
 menu button.active {
     background-color: white;
-    border-right: 5px solid var(--azul-destaque);
+    border-right: 5px solid var(--secondary);
     transition: border 0.2s, background 1s;
 } 
 
-menu button img {
+menu .user-picture-container img {
     border-radius: 30px;
     width: 38px;
     height: 38px;
     margin: 0;
     padding: 0;
-    border: 2px solid var(--azul-destaque);
+    border: 2px solid var(--secondary);
 }
 
 menu.expand {
@@ -56,7 +56,7 @@ menu.expand button {
 }
 menu .main-button {
     border-radius: 50%;
-    background-color: var(--azul);
+    background-color: var(--primary);
     height: 40px;
     width: 40px;
     color: white;

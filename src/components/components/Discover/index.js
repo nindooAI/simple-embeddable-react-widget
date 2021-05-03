@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom'
 
 import LoadingScreen from '../../components/LoadingScreen'
+import * as JINA from 'jinabox'
 
 import * as API from '../../services/api'
 import SearchResult from './components/SearchResult';
@@ -23,12 +24,14 @@ class Discover extends React.Component {
             feed: {}, 
             spaces: [],
             categories: [],
-            loading: true,
-            searchResult: []
+            loading: true
         }
     }
 
-    async componentDidMount() {
+    async componentDidMount() { 
+
+        const jb = window.JinaBox
+        jb.init('https://demo.jina.ai/api/search')
 
         await API.user.getFeed()
             .then((response) => {
@@ -88,26 +91,11 @@ class Discover extends React.Component {
             })
     }
 
-    async findData(searchInput) {
-
-        if (searchInput) {
-            await API.data.search(searchInput) 
-                .then( (response) => {
-                    console.log(response)
-                    this.setState({
-                        searchResult: response.data
-                    })
-                })
-        } else {
-            this.setState({
-                searchResult: []
-            })
-        }
-
-    }
-
     render() {
-        const { spaces, feed, searchResult, user, errorMessage, loading, categories} = this.state 
+        const { spaces, feed, user, errorMessage, loading, categories} = this.state 
+        const { currentSection, updateSection, searchResult } = this.props 
+        console.log(searchResult)
+
 
         if (loading) {
             return <div id='content'><LoadingScreen /></div>
@@ -115,10 +103,9 @@ class Discover extends React.Component {
 
         return (
             <div id='content'>
-                { searchResult[0] || searchResult[1] || searchResult[2] ? 
-                    <SearchResult articles={searchResult} spaces={spaces} /> :
-                    <Dashboard feed={feed} spaces={spaces} user={user} loading={loading} />
-                }
+                { currentSection === 'main'  && <Dashboard feed={feed} spaces={spaces} user={user} loading={loading} /> }
+                { currentSection === 'spaces' && <Spaces user={user} spaces={spaces} /> }
+                { currentSection === 'search' && <SearchResult articles={searchResult} spaces={spaces} /> }    
             </div>
         )
     }

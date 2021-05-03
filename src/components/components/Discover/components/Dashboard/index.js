@@ -102,9 +102,10 @@ class Dashboard extends React.Component {
             <section id='dashboard'>
                     <FadeIn>
                             { Object.entries(feed).map( ([ area, articles ], index) => {
+
+                                if (index !== 0) return null
                                 
                                 return <section className='link-section' key={index}>
-                                    <h4> { area } </h4>
                                     <section className='link_container'>
                                     { articles.map((article, index) => {
                                         return (

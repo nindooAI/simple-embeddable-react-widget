@@ -1,10 +1,8 @@
 #sidebar {
     display: flex;
     flex-direction: column;
-    min-height: calc(100% - 110px);
     margin: 0;
-    width: calc(100% - 100px);
-    padding: 50px;
+    width: 100%;
 }
 
 #sidebar.show {
@@ -19,7 +17,6 @@
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
-    color: white;
     align-items: center;
     width: 100%;
 }
@@ -40,29 +37,26 @@
 }
 
 #sidebar svg > path {
-    stroke: white;
+    stroke: var(--primary);
 }
 
 #spaces #sidebar h4 { 
-    color: white;
+    color: var(--primary);
     font-size: 16px;
 }
 
 .spaces-list {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
+    width: calc(300px - 10px);
     padding: 0;
-    height: auto;
-    max-height: 200px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .spaces-list > .space-item {
-    min-width: 160px;
-    max-width: 160px;
-    padding: 30px 20px 10px 20px;
+    min-width: 140px;
+    max-width: 140px;
 }
 
 
@@ -81,11 +75,11 @@
 
 .spaces-list > .space-item >  p {
     text-align: center;
-    color: white;
+    color: var(--primary);
     font-size: 14px;
     font-weight: 500;
 }
-
+/* 
 .spaces-list > .space-item > div::before {
     content: ' ';
     position: absolute;
@@ -107,7 +101,7 @@
     right: 10%;
     border-radius: 10px 10px 0 0;
     background-color: var(--cinza);
-}
+} */
 
 
 #sidebar .modal {
@@ -131,7 +125,7 @@
 #sidebar > .modal h4 {
     text-align: center;
     padding: 20px;
-    color: var(--azul) !important;
+    color: var(--primary) !important;
     font-size: 20px !important;
     margin: 0;
 }

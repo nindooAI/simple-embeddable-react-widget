@@ -56,9 +56,7 @@ class Spaces extends React.Component {
 
         return (
             <section id='spaces'>
-                <div className='left'>
-                    <Sidebar spaces={spaces} user={user} errorMessage={errorMessage} onSelectSpace={(space) => this.getSpaceData(space)} onCreateSpace={(name, description) => this.onCreateSpace(name, description)}/>
-                </div>
+                <Sidebar spaces={spaces} user={user} errorMessage={errorMessage} onSelectSpace={(space) => this.getSpaceData(space)} onCreateSpace={(name, description) => this.onCreateSpace(name, description)}/>
                 <div className='content'> 
                     <h3> { space && space.name } </h3>
                     <section className='link_container'> 
@@ -90,9 +88,6 @@ class Spaces extends React.Component {
                         }
                     </section>
                 </div>
-                <div className='right'>
-                    { space && <Interactions space={space} deleteSpace={ (spaceId) => this.props.deleteSpace(spaceId)} leaveSpace={ (spaceId) => this.props.leaveSpace(spaceId)} /> }
-                </div>
             </section>
         )
     }
@@ -100,4 +95,4 @@ class Spaces extends React.Component {
 
 }
 
-export default withRouter(Spaces)
+export default Spaces

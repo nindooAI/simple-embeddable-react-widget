@@ -8,7 +8,7 @@
 
 #spaces .left {
     width: 25%;
-    background: var(--azul-destaque);
+    background: var(--secondary);
     margin: 0;
     height: 100%;
     overflow: auto;
