@@ -1,0 +1,208 @@
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 100px);
+    margin: 0;
+    width: calc(100% - 100px);
+    padding: 50px;
+}
+
+#info > section {
+    display: flex;
+    flex-direction: column;
+}
+
+#info.show {
+    right: 0;
+    transition-property: right; 
+    transition-duration: 1s;
+    transition-delay: 0s;
+}
+
+#info  header { 
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    color: var(--azul-destaque);
+    align-items: center;
+    width: 100%;
+}
+
+#info header > button {
+    background-color: transparent;
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin: 0;
+}
+
+#info svg {
+    height: 30px;
+    width: 30px;
+}
+
+#info svg > path {
+    stroke: var(--azul-destaque);
+}
+
+#info  section > h4 {
+    color: white;
+    font-size: 16px;
+}
+
+#info > .activity-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--azul-destaque);
+    font-size: 12px;
+    height: calc(100% - 200px);
+}
+
+#info .activity-item {
+    display: flex;
+    justify-content: flex-start;
+    justify-content: flex-start;
+    font-size: 12px;
+    width: 100%;
+    margin: 0;
+}
+
+#info .activity-item > p {
+    padding: 0 10px;
+}
+
+#info .activity-item > img {
+    margin: 10px;
+    border: 1px solid var(--azul-destaque);
+}
+
+#info .modal.open {
+    height: 100px;
+    transition: height 0.5s;
+}
+
+#info .modal {
+    padding: 0;
+    margin: 10px 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: height 0.5s;
+}
+
+#info .modal h4 {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px; 
+}
+
+#info .modal .search-result {
+    background-color: white;
+    cursor: pointer;
+    padding: 10px 10px;
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#info .modal .search-result img {
+    margin: 0 5px;
+}
+
+#info .modal .search-result p {
+    font-size: 16px;
+    width: 100%;
+    color: var(--azul-destaque)
+}
+
+
+#info .modal .search-result span {
+    font-size: 14px;
+    width: 100%;
+    margin-left: 5px;
+    color: var(--cinza);
+}
+
+#info .modal .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+#info .modal .search-container input {
+    width: 100%;
+}
+
+#info .modal .search-container button {
+    border: none; 
+    background-color: transparent;
+    position: absolute;
+    right: 0px;
+}
+
+#info .modal .search-container img {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+}
+
+
+#info .modal .search-container button svg {
+    width: 20px;
+}
+
+
+#info .modal .search-container button svg path {
+    fill: var(--azul);
+}
+
+#info .contributors {
+    display: flex;
+}
+
+#info .contributors > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#info .contributors > div span {
+    font-size: 14px;
+    color: var(--azul-destaque);
+}
+
+#info .delete-button {
+    background-color: var(--azul);
+    color: white; 
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+#info .delete-button:hover {
+    background-color: white;
+    color: var(--azul); 
+    border: none;
+    padding: 10px;
+}
+
+#info .user-avatar {
+    width: 40px;
+    border-radius: 20px;
+    margin: 10px;
+}

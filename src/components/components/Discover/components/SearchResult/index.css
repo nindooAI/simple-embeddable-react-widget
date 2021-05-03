@@ -1,0 +1,290 @@
+#dashboard .modal {
+    position: absolute; 
+    top: 127px;
+    left: 0;
+    right: calc(100% - 137px);
+    bottom: calc(100% - 127px);
+    background-color: rgba(63, 61, 86, 0.9); 
+    opacity: 0;
+    transition-property: opacity, right, bottom;
+    transition-duration: 1s, 0s, 0s;
+    transition-delay: 1s, 2s, 2s;
+    overflow: hidden;
+}
+
+#dashboard .modal.show {
+    opacity: 1;
+    top: 127px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: 0s;
+}
+
+.modal > .rectangle {
+    position: absolute;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    width: auto;
+}
+
+.modal > .rectangle .thumbnail {
+    width: 127px;
+}
+
+
+.modal .options {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .options p {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    color: white;
+    max-height: 100%;
+}
+
+
+.modal .options button {
+    border-radius: 25px;
+    height: 35px; 
+    width: 35px;
+    background-color: var(--cinza-claro);
+    border: none;
+    padding: 0;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .options button > svg {
+    width: 20px;
+}
+
+.modal .options button > svg > path {
+    fill: var(--azul);
+}
+
+#dashboard > .left {
+    width: calc(100% - 430px);
+    padding-right: 430px;
+}
+
+#dashboard > .right {
+    position: absolute;
+    width: 430px;
+    right: -430px;
+    height: 100%;
+    background-color:white;
+    transition-property: right;
+    transition-delay: 0s;
+    transition-duration: 1s;
+}
+
+#dashboard > .right.show {
+    right: 0;
+    transition-property: right;
+    transition-delay: 1s;
+    transition-duration: 1s;
+}
+
+
+#dashboard .rectangle ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 0px;
+    z-index: 20;
+    list-style: none;
+    margin: 0;
+    overflow-y: auto;
+}
+
+#dashboard .rectangle ul li {
+    width: calc(100% - 10px);
+    padding: 5px;
+    background-color: var(--cinza-claro);
+    color: var(--azul-destaque);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#dashboard .rectangle ul li:hover {
+    cursor: pointer;
+    background: var(--azul-destaque);
+    color: white;
+}
+
+#dashboard .rectangle ul p {
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+}
+
+.result_container > div.article {
+    width: calc(50% - 60px);
+    margin: 20px 20px 20px 0;
+    padding: 10px;
+    border: 1px solid var(--cinza-claro);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.result_container a {
+    color: var(--cinza);
+    font-size: 12px;
+    width: 100%;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.result_container .info {
+    padding: 0px 10px;
+    font-size: 14px;
+    color: var(--azul-destaque);
+    font-weight: 500;
+    width: 50%;
+    margin: 0 10px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.result_container .info .title {
+    font-size: 14px;
+    width: 100%;
+    margin: 0;
+    text-overflow: ellipsis;
+    word-wrap: nowrap;
+    overflow: hidden;
+} 
+
+.result_container .info .description {
+    font-size: 10px;
+} 
+
+.left.flex > div {
+    min-width: 25%;
+    max-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.left.flex > div > div {
+    width: 100%;
+}
+
+.result_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+.user {
+    background-color: white;
+    cursor: pointer;
+    padding: 10px 10px;
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user img {
+    margin: 0 5px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.user p {
+    font-size: 16px;
+    width: 100%;
+    color: var(--azul-destaque)
+}
+
+
+.user span {
+    font-size: 14px;
+    width: 100%;
+    margin-left: 5px;
+    color: var(--cinza);
+}
+
+
+
+
+
+.space {
+    min-width: 160px;
+    max-width: 160px;
+    padding: 30px 20px 10px 20px;
+}
+
+
+.space > div {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 95px;
+    margin: 0;
+}
+
+.space >  p {
+    text-align: center;
+    color: var(--azul-destaque);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.space > div::before {
+    content: ' ';
+    position: absolute;
+    top: -5px;
+    width: 90%;
+    height: 5px;
+    left: 5%;
+    right: 5%;
+    border-radius: 10px 10px 0 0;
+}
+
+.space > div::after {
+    content: ' ';
+    position: absolute;
+    top: -10px;
+    width: 80%;
+    height: 5px;
+    left: 10%;
+    right: 10%;
+    border-radius: 10px 10px 0 0;
+    background-color: var(--cinza);
+}

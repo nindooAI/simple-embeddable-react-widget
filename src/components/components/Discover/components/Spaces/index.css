@@ -1,0 +1,30 @@
+#spaces {
+    padding: 0;
+    width: 100%;
+    min-height: calc(100% - 127px);
+    max-height: 100%;
+    display: flex;
+}
+
+#spaces .left {
+    width: 25%;
+    background: var(--azul-destaque);
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+#spaces .content {
+    width: 50%;
+    height: calc(100% - 100px);
+    margin: 0;
+    padding: 50px;
+    overflow: auto;
+}
+
+#spaces .right {
+    width: 25%;
+    height: 100%;
+    background: var(--cinza-claro);
+    margin: 0;
+}

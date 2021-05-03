@@ -1,0 +1,63 @@
+menu {
+    width: calc(100% - 40px);
+    padding: 20px 20px;
+    border-top: 1px solid var(--azul-destaque);
+    display: flex;
+    height: 50px;
+    margin: 0;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+    transition: width 0.5s linear 0s, background 1s linear 0.5s, border 0.2s linear 0s; 
+}
+
+menu button {
+    border: none; 
+    background-color: transparent; 
+    padding: 0; 
+    height: 30px;
+    opacity: 1;
+    transition-property: opacity; 
+    transition-duration: 1s;
+    transition-delay: 1s;
+    color: var(--azul);
+}
+
+menu button.active {
+    background-color: white;
+    border-right: 5px solid var(--azul-destaque);
+    transition: border 0.2s, background 1s;
+} 
+
+menu button img {
+    border-radius: 30px;
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    padding: 0;
+    border: 2px solid var(--azul-destaque);
+}
+
+menu.expand {
+    width: 60vw;
+    background: url('../../assets/images/background.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+    transition-property: width 0.5s linear 0s, background 1s linear 0s;
+}
+
+menu.expand button {
+    opacity: 0;
+    transition-property: opacity; 
+    transition-duration: 1s;
+    transition-delay: 0s;
+}
+menu .main-button {
+    border-radius: 50%;
+    background-color: var(--azul);
+    height: 40px;
+    width: 40px;
+    color: white;
+}

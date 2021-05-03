@@ -1,0 +1,70 @@
+.logout-button {
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.logout-button svg {
+    width: 20px;
+}
+
+
+.logout-button svg path {
+    fill: var(--cinza);
+}
+
+.logout-button:hover svg path {
+    fill: var(--azul-destaque)
+}
+
+.search-input {
+    width: calc(100% - 200px);
+    display: flex;
+    position: relative;
+    height: 50px;
+    justify-content: center;
+}
+
+.search-input input {
+    width: calc(100% - 100px);
+    border: none;
+    border-bottom: 1px solid var(--cinza);
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    padding-left: 30px;
+    color: var(--cinza);
+}
+
+.search-input .clear-search {
+    position: absolute;
+    background: transparent;
+    border: none;
+    left: 25px;
+    bottom: 0px;
+}
+
+.search-input .clear-search svg {
+    width: 15px;
+    transform: rotate(45deg);
+}
+
+.search-input .search-icon  {
+    position: absolute;
+    background: transparent;
+    border: none;
+    right: 25px;
+
+}
+
+.search-input button svg {
+    width: 30px;
+}
+
+.search-input button svg path {
+    fill: var(--cinza);
+}

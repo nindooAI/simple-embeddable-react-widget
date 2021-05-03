@@ -1,0 +1,70 @@
+#dashboard #sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    padding: 50px 0;
+}
+
+#sidebar.show {
+    right: 0;
+    transition-property: right; 
+    transition-duration: 1s;
+    transition-delay: 0s;
+}
+
+#dashboard #sidebar header { 
+    padding: 10px 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--azul-destaque);
+    align-items: center;
+}
+
+.similar-links {
+    overflow-x: hidden;
+    height: calc(100% - 250px);
+    width: 100%;
+}
+
+.similar-links > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    margin: 30px 10px;
+    border: 1px solid var(--cinza-claro);
+    border-radius: 10px;
+}
+
+.similar-links .info { 
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    height: 127px;
+    justify-content: space-between;
+}
+
+.similar-links p {
+    color: var(--azul-destaque);
+    font-size: 14px;
+    width: 70%;
+    margin: 0px;
+}
+
+.similar-links .info a {
+    color: var(--cinza);
+    font-size: 12px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#dashboard #sidebar svg > path {
+    stroke: var(--azul-destaque);
+}

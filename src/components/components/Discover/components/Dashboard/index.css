@@ -1,0 +1,185 @@
+#dashboard {
+    padding: 0 10px;
+    max-width: 300px;
+    height: 300px;
+    display: flex;
+    overflow-x: hidden;
+}
+
+
+#dashboard .modal {
+    position: absolute; 
+    top: 127px;
+    left: 0;
+    right: calc(100% - 137px);
+    bottom: calc(100% - 127px);
+    background-color: rgba(63, 61, 86, 0.9); 
+    opacity: 0;
+    transition-property: opacity, right, bottom;
+    transition-duration: 1s, 0s, 0s;
+    transition-delay: 1s, 2s, 2s;
+    overflow: hidden;
+}
+
+#dashboard .modal.show {
+    opacity: 1;
+    top: 127px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: 0s;
+}
+
+.modal > .rectangle {
+    position: absolute;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    width: auto;
+}
+
+.modal > .rectangle .thumbnail {
+    width: 127px;
+}
+
+.link-type {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    border-radius: 10px;
+    background-color: var(--azul-destaque);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -5px; 
+    top: -15px;
+    z-index: 10;
+}
+
+.link-section {
+    width: 300px;
+}
+
+.link-section h4 {
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.link-type svg {
+    width: 20px;
+    height: 20px;
+}
+
+.modal .options {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .options p {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    color: white;
+    max-height: 100%;
+}
+
+
+.modal .options button {
+    border-radius: 25px;
+    height: 35px; 
+    width: 35px;
+    background-color: var(--cinza-claro);
+    border: none;
+    padding: 0;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .options button > svg {
+    width: 20px;
+}
+
+.modal .options button > svg > path {
+    fill: var(--azul);
+}
+
+#dashboard > .left {
+    width: calc(100% - 430px);
+    padding-right: 430px;
+}
+
+#dashboard > .right {
+    position: absolute;
+    width: 430px;
+    right: -430px;
+    height: 100%;
+    background-color:white;
+    transition-property: right;
+    transition-delay: 0s;
+    transition-duration: 1s;
+}
+
+#dashboard > .right.show {
+    right: 0;
+    transition-property: right;
+    transition-delay: 1s;
+    transition-duration: 1s;
+}
+
+
+#dashboard .rectangle ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 0px;
+    z-index: 20;
+    list-style: none;
+    margin: 0;
+    overflow-y: auto;
+}
+
+#dashboard .rectangle ul li {
+    width: calc(100% - 10px);
+    padding: 5px;
+    background-color: var(--cinza-claro);
+    color: var(--azul-destaque);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#dashboard .rectangle ul li:hover {
+    cursor: pointer;
+    background: var(--azul-destaque);
+    color: white;
+}
+
+#dashboard .rectangle ul p {
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+}
+
+.link_container a {
+    color: var(--cinza);
+    font-size: 12px;
+    width: 100%;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

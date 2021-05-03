@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Widget from './components/Widget/Widget';
+import Widget from './components/App';
 import Config from './config';
 
 const widgetName = Config.name;
