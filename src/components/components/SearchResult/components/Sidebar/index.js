@@ -1,6 +1,6 @@
 import React from 'react' 
 import './index.css'
-import { LinkIcon } from '../../../../../../assets/icons'
+import { LinkIcon } from '../../../../assets/icons'
 
 class Sidebar extends React.Component {
 

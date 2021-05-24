@@ -151,9 +151,8 @@ async function addUser(userId, spaceId) {
 async function getData(spaceId) {
 
     const token = localStorage.getItem('discover@token')
-    const userId = localStorage.getItem('discover@userId') 
 
-    return await instance.get(`/user/${userId}/space/${spaceId}/data/`, 
+    return await instance.get(`/space/${spaceId}/data/`, 
             {
                 headers: {
                 'Content-Type': 'application/json',

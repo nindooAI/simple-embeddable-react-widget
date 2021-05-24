@@ -1,10 +1,12 @@
-export default {
+const config = {
     auth: { 
-        host: 'discover.nindoo.ai',
+        host: '64.227.4.10',
         port: 3002
     }, 
     discover: {
-        host: 'discover.nindoo.ai', 
+        host: '64.227.4.10', 
         port: 3001
     }
 }
+
+export default config 

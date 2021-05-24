@@ -1,9 +1,8 @@
 .Nindoo-Widget {
   text-align: center;
-  width: 300px;
+  width: 400px;
   height: 0;
   position: absolute; 
-  background: white;
   border-radius: 25px 25px 10px 25px;
   bottom: 60px;
   right: 60px;
@@ -14,11 +13,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #1b1b1b;
+  background-image: radial-gradient(rgba(200,200,200,0.2) 1%,#1b1b1b 5%);
+  background-position: 0 0;
+  background-size: 100px 100px;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .Nindoo-Widget.active {
   box-shadow: -2px 2px 5px 5px #ddd;
-  height: 500px;
+  height: 90%;
 }
 
 .Nindoo-floater {
@@ -41,6 +46,16 @@
   color: white;
 }
 
+.Nindoo-shortcut {
+  position: absolute; 
+  right: 0;
+  bottom: 70px;
+  opacity: 0;
+}
+
+.Nindoo-shortcut.show {
+  opacity: 1;
+}
 
 body {
   font-family: 'Inter', sans-serif !important;
@@ -69,6 +84,7 @@ body {
   padding: 20px 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 article {
@@ -78,10 +94,8 @@ article {
 }
 
 #content {
-  width: 300px;
-  min-height: 300px;
-  height: 300px;
-  max-height: 300px;
+  width: 100%;
+  height: calc(100% - 140px);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -92,8 +106,8 @@ article {
   --cinza-claro: #EAEAF6; 
   --cinza: #9A9ABB; 
   --cinza-escuro: #56557C;
-  --primary: rgb(30, 4, 93);
-  --secondary: rgb(22, 12, 158);
+  --primary: rgb(30, 4, 93) !important;
+  --secondary: rgb(22, 12, 158) impor !important;
 }
 
 
@@ -103,21 +117,21 @@ h3 {
   line-height: 40px;
   font-weight: normal;
   letter-spacing: -0.01em;
-  color: var(--primary);
+  color: white;
 }
 
 h4 {
   font-size: 24px;
   line-height: 40px;
   letter-spacing: -0.01em;
-  color: var(--primary);
+  color: white;
 }
 
 h5 {
   font-size: 22px;
   line-height: 25px;
   letter-spacing: 0.02em; 
-  color: var(--secondary);
+  color: white;
 }
 
 
@@ -137,19 +151,6 @@ h5 {
 .input-container {
   height: 100px;
   width: 50%;
-}
-
-input[type='text'], 
-input[type='date'], 
-input[type='password'], 
-textarea  {
-  border: none;
-  border-bottom: 1px solid var(--primary); 
-  background-color: transparent;
-  font-size: 18px;
-  color: var(--cinza);
-  padding: 10px 0;
-  width: 90%;
 }
 
 input[type='file'] {
@@ -248,4 +249,181 @@ label[for='file']:hover {
   max-width: 6px;
   border-radius: 3px;
   background-color: var(--cinza);
+}
+
+.small {
+  font-size: 10px !important;
+}
+
+.link_container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.link_container.search {
+  flex-direction: row;
+  overflow-x: scroll;
+  flex-wrap: unset;
+  height: 300px;
+}
+
+.link_container.search > div {
+  min-width: 400px;
+}
+
+.link_container > div {
+  padding: 0;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  min-height: 250px;
+  position: relative;
+}
+
+.link_container .info {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 0px 10px;
+  color: white;
+  font-weight: 600;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.9))
+}
+
+
+.link_container .info .title {
+  font-size: 22px;
+  width: 100%;
+  margin: 0;
+  margin-top: 60px;
+  text-overflow: ellipsis;
+  word-wrap: nowrap;
+  overflow: hidden;
+  text-align: left;
+} 
+
+.logout-button {
+  background-color: transparent;
+  border: none;
+  margin: 10px;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.logout-button svg {
+  width: 20px;
+}
+
+
+.logout-button svg path {
+  fill: var(--cinza);
+}
+
+.logout-button:hover svg path {
+  fill: var(--secondary)
+}
+
+.search-container {
+  display: flex;
+  font-size: 14px;
+  width: 100%;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.search-icon  {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+.search-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.search-input {
+  background: white;
+  height: 40px;
+  width: calc(100% - 20px);
+  margin: auto;
+  border-radius: 20px;
+  border: none;
+  padding: 0 20px;
+}
+
+.search-input button svg path {
+  fill: var(--cinza);
+}
+
+.Nindoo-Widget.active.search {
+  width: 90% !important;
+  height: 400px;
+}
+
+.link_container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.link_container > div {
+    padding: 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    min-height: 250px;
+    position: relative;
+}
+
+.link_container .info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0px 20px;
+    color: white;
+    font-weight: 600;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.9))
+}
+
+.color-pink {
+  color: var(--pink) !important;
+}
+
+.login-btn {
+  background: transparent !important;
+  border-color: rgb(255,0,166) !important;
+  color: rgb(255,0,166) !important;
 }

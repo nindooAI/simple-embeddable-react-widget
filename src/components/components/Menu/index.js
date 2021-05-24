@@ -1,64 +1,70 @@
 import React from 'react' 
-import { SpacesIcon } from '../../assets/icons/menu'
-import { DiscoverOn, DiscoverOff } from '../../assets/icons'
 import './index.css'
-import { withRouter } from 'react-router-dom'
-import UserPlaceholder from '../../assets/images/user.png'
-import { AiOutlinePlusCircle, AiOutlineGold } from 'react-icons/ai'
+import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
+import { Accordion } from 'react-bootstrap'
 
-const options = [
-    // { name: 'Abilities', icon: (classes) => <AbilitiesIcon className={classes} /> },
-    { name: 'Spaces', icon: (classes) => <SpacesIcon className={classes} />, slug: 'spaces' },
-    { name: 'Main', icon: (classes) => <AiOutlineGold size={20} className={classes} />, slug: 'main' }
-    // { name: 'Store', icon: (classes) => <StoreIcon className={classes} /> }, 
+const defaultOptions = [
+    { name: 'Discover', slug: 'discover' },
+    { name: 'Search', slug: 'search'},
+    { name: 'Spaces', slug: 'spaces'}
 ]
 
 
 class Menu extends React.Component  {
 
     constructor(props) {
-        super(props) 
+        super(props)
         this.state = {
-            user: ''
+            options: defaultOptions,
+            open: false
         }
     }
 
-    componentDidMount() {
+    handleClick(section) {            
         this.setState({
-            userAvatar: localStorage.getItem('discover@userAvatar')
+            open: false
         })
+        this.props.updateSection(section)   
     }
 
-    handleClick(item) {       
-        const { activeButton } = this.state  
-        const { history } = this.props 
-
-        if (!['login','register'].includes(activeButton)) {
-            this.setState({
-                activeButton: item.toLowerCase()
-            })
-            history.push('/' + item.toLowerCase())
-        } 
-    }
+    setOpen() {
+        this.setState( (state) => ({
+            open: !state.open
+        }))
+    }   
 
     render() {
-        const { activeButton, userAvatar } = this.state 
-        const { currentSection, updateSection } = this.props 
+        const { open, options } = this.state 
+        const { currentSection, spaces } = this.props  
+
+        const header = typeof currentSection === 'number' ? spaces.filter( s => s.id === currentSection)[0].name : currentSection.charAt(0).toUpperCase() + currentSection.slice(1) 
 
         return (
-            <menu className={ activeButton === 'login' ? 'expand' : ''}>
-                {
-                    options.map( (option) => {
-                        return (
-                            <button className={option.slug + '-button'} onClick={ () => updateSection(option.slug)}>
-                                { option.icon() }
-                            </button>
-                        )
-                    })
-                }               
-                <div className='user-picture-container'>
-                    <img alt='user-profile' src={ userAvatar ? userAvatar : UserPlaceholder }/> 
-                </div>
+            <menu className={ open ? 'active' : '' }>
+                <Accordion.Toggle onClick={() =>this.setOpen()}> <h5> { open ? 'Menu' : header } { open ? <BsChevronUp /> : <BsChevronDown />  } </h5> </Accordion.Toggle>
+                <Accordion.Collapse in={open} className='menu-select' defaultValue={currentSection} onChange={ (e) => this.handleClick(e.target.value)}>
+                    <div>
+
+                    {
+                        options.map( (option, index) => { 
+
+                            return (
+                                <div key={index} className={ currentSection === option.slug ? ('active option' ): 'option'} value={option.slug} onClick={ () => this.handleClick(option.slug)}>
+                                    { option.name }
+                                </div>
+                            )
+                        })
+                    } 
+                    {  spaces.map( (option, index) => { 
+                            return (
+                                <div value={option.slug} key={index} className={ currentSection === option.id ? 'active sub-option' : 'sub-option'} onClick={ () => this.handleClick(option.id)}>
+                                    { option.name }
+                                </div>
+                            )
+                        })
+                    }
+                    </div>
+                </Accordion.Collapse>         
             </menu>
           )
     }

@@ -128,7 +128,6 @@ class Interactions extends React.Component {
                                 <SearchIcon />
                             </button>
                             <input type='text' placeholder='Search by username' value={searchInput} onChange={ (e) => this.updateInput(e.target.value)} /> 
-                            { searching ? <img alt='nindoo-loading' src={LoadingGif} width={40} /> : null }
                         </div>
                         { searchInput && searchResult.id && 
                             <div onClick={() => this.addContributor(searchResult.id) } className='search-result'> 
